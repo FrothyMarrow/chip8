@@ -23,5 +23,12 @@
         cp chip8 $out/bin
       '';
     };
+
+    devShell.${system} = pkgs.mkShell {
+      packages = [
+        pkgs.SDL2
+        pkgs.clang-tools
+      ];
+    };
   };
 }
